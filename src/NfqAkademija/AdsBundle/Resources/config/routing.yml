@@ -1,0 +1,7 @@
+nfq_akademija_ads_homepage:
+    pattern:  /
+    defaults: { _controller: NfqAkademijaAdsBundle:Default:index }
+nfq_akademija_ads_profile:
+    pattern:  /user
+    defaults: { _controller: NfqAkademijaAdsBundle:Default:profile }
+
