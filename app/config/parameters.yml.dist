@@ -13,3 +13,6 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    google_secret_code: 3ZTDV_T2fqNBK92Wtw-KR56G
+    google_app_id: 514630618263-hsqugnghjcfitku1qbk6lnfltbl3srbj.apps.googleusercontent.com 
