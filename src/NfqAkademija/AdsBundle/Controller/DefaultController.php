@@ -3,6 +3,7 @@
 namespace NfqAkademija\AdsBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Session;
 
 class DefaultController extends Controller
 {
@@ -13,8 +14,8 @@ class DefaultController extends Controller
     }
     public function profileAction()
     {
-
-        return $this->render('NfqAkademijaAdsBundle:Default:profile.html.twig', array('session_realname' => $session->get('realname')));
+        $realname = $session->get('realname');
+        return $this->render('NfqAkademijaAdsBundle:Default:profile.html.twig', array('session_realname' => $realname ));
     }
 
 }
