@@ -11,4 +11,5 @@
 /composer.phar
 /.idea
 /app/config/deploy_config
-app/config/parameters.yml.save
+/app/config/parameters.yml.save
+
