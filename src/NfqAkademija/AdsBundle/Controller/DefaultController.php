@@ -14,7 +14,7 @@ class DefaultController extends Controller
     public function profileAction()
     {
 
-        return $this->render('NfqAkademijaAdsBundle:Default:profile.html.twig', array('session_realname' => $_SESSION['realname']));
+        return $this->render('NfqAkademijaAdsBundle:Default:profile.html.twig', array('session_realname' => $session->get('realname');));
     }
 
 }
