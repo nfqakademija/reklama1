@@ -3,7 +3,10 @@
 
 </head>
 <body>
-Hello User, protected area!<br />
+Hello User, {{ session_realname }}.
+This is your profile.<br />
+
+DEV: protected area<br /><br/>
 <a href="{{ url('nfq_akademija_ads_homepage') }}">Home</a><br />
 <a href="{{ url('logout') }}">Logout</a>
 
