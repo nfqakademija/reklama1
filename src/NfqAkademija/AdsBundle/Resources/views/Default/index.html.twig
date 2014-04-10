@@ -4,5 +4,12 @@
 </head>
 <body>
 Hello
+
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+    <a href="/user">Profile</a><br />
+    <a href="/logout">Logout</a><br />
+{% else %}
+    <a href="/login">Login</a>
+{% endif %}
 </body>
 </html>
