@@ -7,13 +7,13 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * NfqAkademija\AdsBundle\Entity\Campgain
+ * NfqAkademija\AdsBundle\Entity\Campaign
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="NfqAkademija\AdsBundle\Entity\CampgainRepository")
+ * @ORM\Entity(repositoryClass="NfqAkademija\AdsBundle\Entity\CampaignRepository")
  * @UniqueEntity("googleId")
  */
-class Campgain
+class Campaign
 {
     /**
      * @var integer $id
@@ -52,7 +52,7 @@ class Campgain
     private $budget;
     
     /**
-     * @ORM\OneToMany(targetEntity="NfqAkademija\AdsBundle\Entity\Ad", mappedBy="campgainId")
+     * @ORM\OneToMany(targetEntity="NfqAkademija\AdsBundle\Entity\Ad", mappedBy="campaignId")
      */
     private $ads;
 
@@ -71,7 +71,7 @@ class Campgain
      * Set userId
      *
      * @param integer $userId
-     * @return Campgain
+     * @return Campaign
      */
     public function setUserId($userId)
     {
@@ -93,7 +93,7 @@ class Campgain
      * Set googleId
      *
      * @param text $googleId
-     * @return Campgain
+     * @return Campaign
      */
     public function setGoogleId($googleId)
     {
@@ -115,7 +115,7 @@ class Campgain
      * Set name
      *
      * @param text $name
-     * @return Campgain
+     * @return Campaign
      */
     public function setName($name)
     {
@@ -137,7 +137,7 @@ class Campgain
      * Set budget
      *
      * @param float $budget
-     * @return Campgain
+     * @return Campaign
      */
     public function setBudget($budget)
     {
@@ -163,7 +163,7 @@ class Campgain
      * Add ads
      *
      * @param NfqAkademija\AdsBundle\Entity\Ad $ads
-     * @return Campgain
+     * @return Campaign
      */
     public function addAd(\NfqAkademija\AdsBundle\Entity\Ad $ads)
     {

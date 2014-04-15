@@ -14,5 +14,5 @@ parameters:
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
 
-    google_secret_code: 3ZTDV_T2fqNBK92Wtw-KR56G
-    google_app_id: 514630618263-hsqugnghjcfitku1qbk6lnfltbl3srbj.apps.googleusercontent.com 
+    google_secret_code: rgcdachaLlKBnzm5Dzi4u2Qf
+    google_app_id: 514630618263-luu831pb8r88jn69rh7ficbuvsiuea7o.apps.googleusercontent.com

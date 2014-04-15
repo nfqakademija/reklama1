@@ -50,12 +50,6 @@ class User extends OAuthUser implements EquatableInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="nickname", type="string", length=255, nullable=true)
-     */
-    protected $nickname;
-    /**
-     * @var string
-     *
      * @ORM\Column(name="salt", type="string", length=32)
      */
     protected $salt;
@@ -94,20 +88,6 @@ class User extends OAuthUser implements EquatableInterface, \Serializable
         $this->roles = new ArrayCollection();
         $this->isActive = true;
         $this->salt = md5(uniqid(null, true));
-    }
-    /**
-     * @param string $nickname
-     */
-    public function setNickname($nickname)
-    {
-        $this->nickname = $nickname;
-    }
-    /**
-     * @return string
-     */
-    public function getNickname()
-    {
-        return $this->nickname;
     }
     /**
      * @param string $realname

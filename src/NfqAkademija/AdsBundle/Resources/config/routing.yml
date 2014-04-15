@@ -4,4 +4,12 @@ nfq_akademija_ads_homepage:
 nfq_akademija_ads_profile:
     pattern:  /user
     defaults: { _controller: NfqAkademijaAdsBundle:Default:profile }
-
+nfq_akademija_ads_ads:
+    pattern:  /ads
+    defaults: { _controller: NfqAkademijaAdsBundle:Default:ads }
+nfq_akademija_ads_campaign:
+    pattern:  /campaign
+    defaults: { _controller: NfqAkademijaAdsBundle:Default:campaign }
+nfq_akademija_ads_create_campaign:
+    pattern:  /campaign/new
+    defaults: { _controller: NfqAkademijaAdsBundle:Default:createCampaign }

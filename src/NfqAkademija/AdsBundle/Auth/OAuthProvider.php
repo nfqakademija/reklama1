@@ -35,12 +35,10 @@ class OAuthProvider extends OAuthUserProvider
         //Data from Google response
         $google_id = $response->getUsername(); /* An ID like: 112259658235204980084 */
         $email = $response->getEmail();
-        $nickname = $response->getNickname();
         $realname = $response->getRealName();
         $avatar = $response->getProfilePicture();
         //set data in session
         $this->session->set('email', $email);
-        $this->session->set('nickname', $nickname);
         $this->session->set('realname', $realname);
         $this->session->set('avatar', $avatar);
         //Check if this Google user already exists in our app DB
@@ -56,7 +54,6 @@ class OAuthProvider extends OAuthUserProvider
             $user = new User();
             $user->setUsername($google_id);
             $user->setRealname($realname);
-            $user->setNickname($nickname);
             $user->setEmail($email);
             $user->setGoogleId($google_id);
             $em = $this->doctrine->getManager();

@@ -1,11 +1,13 @@
 <html>
 <head>
-
+    {% include "NfqAkademijaAdsBundle:Default:stylesheets.html.twig" %}
 </head>
 <body>
-Hello
+Hello<br />
 
 {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+	<br /><a href="{{ url('nfq_akademija_ads_campaign') }}">My Campaigns</a>
+
     <br /><a href="{{ url('nfq_akademija_ads_profile') }}">Profile</a><br />
     <a href="{{ url('logout') }}">Logout</a><br />
 {% else %}

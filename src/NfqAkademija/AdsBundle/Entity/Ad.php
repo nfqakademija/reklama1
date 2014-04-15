@@ -25,12 +25,12 @@ class Ad
     private $id;
 
     /**
-     * @var text $campgainId
+     * @var text $campaignId
      *
-     * @ORM\ManyToOne(targetEntity="NfqAkademija\AdsBundle\Entity\Campgain", inversedBy="ads")
-     * @ORM\JoinColumn(name="campgain_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="NfqAkademija\AdsBundle\Entity\Campaign", inversedBy="ads")
+     * @ORM\JoinColumn(name="campaign_id", referencedColumnName="id")
      */
-    private $campgainId;
+    private $campaignId;
 
     /**
      * @var text $name
@@ -86,25 +86,25 @@ class Ad
     }
 
     /**
-     * Set campgainId
+     * Set campaignId
      *
-     * @param text $campgainId
+     * @param text $campaignId
      * @return Ad
      */
-    public function setCampgainId($campgainId)
+    public function setCampaignId($campaignId)
     {
-        $this->campgainId = $campgainId;
+        $this->campaignId = $campaignId;
         return $this;
     }
 
     /**
-     * Get campgainId
+     * Get campaignId
      *
      * @return text 
      */
-    public function getCampgainId()
+    public function getCampaignId()
     {
-        return $this->campgainId;
+        return $this->campaignId;
     }
 
     /**
