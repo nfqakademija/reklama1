@@ -12,4 +12,5 @@
 /.idea
 /app/config/deploy_config
 /app/config/parameters.yml.save
-
+/src/NfqAkademija/AdsBundle/Entity/Ad.php~
+/src/NfqAkademija/AdsBundle/Entity/Campgain.php~
