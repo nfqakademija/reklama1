@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "5ecbb2fca1a6e44152b88ecc6063eea1",
+    "hash": "aa50715e6f6618ab013adc2a7ff041b5",
     "packages": [
         {
             "name": "doctrine/common",
@@ -259,6 +259,57 @@
                 "orm"
             ],
             "time": "2012-07-29 11:22:34"
+        },
+        {
+            "name": "googleads/googleads-php-lib",
+            "version": "5.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/googleads/googleads-php-lib.git",
+                "reference": "592a9451b2e07ab414fbbb16ace2adeae60663bd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/googleads/googleads-php-lib/zipball/592a9451b2e07ab414fbbb16ace2adeae60663bd",
+                "reference": "592a9451b2e07ab414fbbb16ace2adeae60663bd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "src/"
+            ],
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Matthews",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Adam Rogal",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Mat Scales",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Vincent Tsao",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Ray Tsang",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Google Ads APIs Client Library for PHP (AdWords, Adx, and DFP)",
+            "homepage": "https://github.com/googleads/googleads-php-lib",
+            "time": "2014-04-11 19:02:17"
         },
         {
             "name": "hwi/oauth-bundle",
@@ -596,16 +647,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.8.0",
+            "version": "1.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "392ef35fd470638e08d0160d6b1cbab63cb23174"
+                "reference": "65026b610f8c19e61d7242f600530677b0466aac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/392ef35fd470638e08d0160d6b1cbab63cb23174",
-                "reference": "392ef35fd470638e08d0160d6b1cbab63cb23174",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/65026b610f8c19e61d7242f600530677b0466aac",
+                "reference": "65026b610f8c19e61d7242f600530677b0466aac",
                 "shasum": ""
             },
             "require": {
@@ -633,7 +684,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8.x-dev"
+                    "dev-master": "1.9.x-dev"
                 }
             },
             "autoload": {
@@ -660,7 +711,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-03-23 19:50:26"
+            "time": "2014-04-24 13:29:03"
         },
         {
             "name": "psr/log",
