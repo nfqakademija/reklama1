@@ -69,6 +69,10 @@ class User extends OAuthUser implements EquatableInterface, \Serializable
      * @ORM\Column(name="is_active", type="boolean")
      */
     protected $isActive;
+     /**
+     * @ORM\Column(name="adwordsuserid", type="string", length=255)
+     */
+    protected $adWordsUserId;
     /**
      * @param mixed $isActive
      */
@@ -274,5 +278,27 @@ class User extends OAuthUser implements EquatableInterface, \Serializable
     public function removeRole(\NfqAkademija\AdsBundle\Entity\Role $roles)
     {
         $this->roles->removeElement($roles);
+    }
+
+    /**
+     * Set adWordsUserId
+     *
+     * @param string $adWordsUserId
+     * @return User
+     */
+    public function setAdWordsUserId($adWordsUserId)
+    {
+        $this->adWordsUserId = $adWordsUserId;
+        return $this;
+    }
+
+    /**
+     * Get adWordsUserId
+     *
+     * @return string 
+     */
+    public function getAdWordsUserId()
+    {
+        return $this->adWordsUserId;
     }
 }
