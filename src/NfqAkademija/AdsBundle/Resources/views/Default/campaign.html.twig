@@ -1,9 +1,16 @@
 <html>
 <head>
-    {% include "::stylesheets.html.twig" %}
+    {% include "NfqAkademijaAdsBundle:Default:stylesheets.html.twig" %}
 </head>
 <body>
-{{ form(form) }}
+	{% for key, campaign in campaigns %}
+	<p>{{ campaign.name }} - {{ campaign.budget }} - <a href="{{ path('nfq_akademija_ads_campaign_remove', { 'campaignId':campaign.id}) }}">Delete</a></p>
+	{% endfor %}
+{% if is_granted('IS_AUTHENTICATED_FULLY') %}
+	<br /><a href="{{ url('nfq_akademija_ads_campaign') }}">Create Campaign</a>
 
+    <br /><a href="{{ url('nfq_akademija_ads_profile') }}">Profile</a><br />
+    <a href="{{ url('logout') }}">Logout</a>
+{% endif %}
 </body>
 </html>

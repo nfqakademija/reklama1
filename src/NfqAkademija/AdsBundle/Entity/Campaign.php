@@ -26,35 +26,36 @@ class Campaign
 
     /**
      * @var integer $userId
-     *
-     * @ORM\Column(name="user_id", type="integer")
+     * 
+     * @ORM\ManyToOne(targetEntity="NfqAkademija\AdsBundle\Entity\User", inversedBy="campaigns")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
-    private $userId;
+    protected $userId;
 
     /**
      * @var text $googleId
      * @ORM\Column(name="google_id", type="text")
      */
-    private $googleId;
+    protected $googleId;
 
     /**
      * @var text $name
      *
      * @ORM\Column(name="name", type="text")
      */
-    private $name;
+    protected $name;
 
     /**
      * @var float $budget
      *
      * @ORM\Column(name="budget", type="float")
      */
-    private $budget;
+    protected $budget;
     
     /**
      * @ORM\OneToMany(targetEntity="NfqAkademija\AdsBundle\Entity\Ad", mappedBy="campaignId")
      */
-    private $ads;
+    protected $ads;
 
 
     /**
@@ -67,27 +68,6 @@ class Campaign
         return $this->id;
     }
 
-    /**
-     * Set userId
-     *
-     * @param integer $userId
-     * @return Campaign
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-        return $this;
-    }
-
-    /**
-     * Get userId
-     *
-     * @return integer 
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
 
     /**
      * Set googleId
@@ -189,5 +169,27 @@ class Campaign
     public function getAds()
     {
         return $this->ads;
+    }
+
+    /**
+     * Set userId
+     *
+     * @param NfqAkademija\AdsBundle\Entity\User $userId
+     * @return Campaign
+     */
+    public function setUserId(\NfqAkademija\AdsBundle\Entity\User $userId = null)
+    {
+        $this->userId = $userId;
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return NfqAkademija\AdsBundle\Entity\User 
+     */
+    public function getUserId()
+    {
+        return $this->userId;
     }
 }

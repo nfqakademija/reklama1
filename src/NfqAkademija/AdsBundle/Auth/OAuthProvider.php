@@ -4,6 +4,7 @@ use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider;
 use HWI\Bundle\OAuthBundle\OAuth\Response\UserResponseInterface;
 use NfqAkademija\AdsBundle\Entity\User;
 use NfqAkademija\AdsBundle\Entity\Role;
+use AdWordsUser;
 
 
 class OAuthProvider extends OAuthUserProvider
@@ -15,6 +16,32 @@ class OAuthProvider extends OAuthUserProvider
         $this->doctrine = $doctrine;
         $this->container = $service_container;
     }
+    public function createAccount(AdWordsUser $AdUser) 
+    {
+	    // Get the service, which loads the required classes.
+	    $managedCustomerService =
+	   	    $AdUser->GetService('ManagedCustomerService');
+
+	    // Create customer.
+	    $customer = new \ManagedCustomer();
+	    $customer->name = 'Account #' . uniqid();
+	    $customer->currencyCode = 'EUR';
+	    $customer->dateTimeZone = 'Europe/Vilnius';
+
+	    // Create operation.
+	    $operation = new \ManagedCustomerOperation();
+	    $operation->operator = 'ADD';
+	    $operation->operand = $customer;
+
+	    $operations = array($operation);
+
+	    // Make the mutate request.
+	    $result = $managedCustomerService->mutate($operations);
+
+	    // Display result.
+	    $customer = $result->value[0];
+	    return $customer->customerId;
+	}
     public function loadUserByUsername($username)
     {
         $qb = $this->doctrine->getManager()->createQueryBuilder();
@@ -56,6 +83,8 @@ class OAuthProvider extends OAuthUserProvider
             $user->setRealname($realname);
             $user->setEmail($email);
             $user->setGoogleId($google_id);
+            $googleAdsUser = new AdWordsUser();
+            $user->setAdWordsUserId($this->createAccount($googleAdsUser));
             $em = $this->doctrine->getManager();
             $roleRep = $em->getRepository('NfqAkademijaAdsBundle:Role');
             $user->addRole($roleRep->findOneBy(array('role' => 'ROLE_USER')));

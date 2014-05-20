@@ -8,8 +8,15 @@ nfq_akademija_ads_ads:
     pattern:  /ads
     defaults: { _controller: NfqAkademijaAdsBundle:Default:ads }
 nfq_akademija_ads_campaign:
-    pattern:  /campaign
-    defaults: { _controller: NfqAkademijaAdsBundle:Default:campaign }
-nfq_akademija_ads_create_campaign:
     pattern:  /campaign/new
-    defaults: { _controller: NfqAkademijaAdsBundle:Default:createCampaign }
+    defaults: { _controller: NfqAkademijaAdsBundle:Campaign:campaign }
+nfq_akademija_ads_listAll:
+    pattern:  /campaign
+    defaults: { _controller: NfqAkademijaAdsBundle:Campaign:listAll }
+nfq_akademija_ads_create:
+    pattern:  /campaign/createNew
+    defaults: { _controller: NfqAkademijaAdsBundle:Campaign:create }
+nfq_akademija_ads_campaign_remove:
+    pattern:  /campaign/remove/{campaignId}
+    defaults: { _controller: NfqAkademijaAdsBundle:Campaign:remove }
+    

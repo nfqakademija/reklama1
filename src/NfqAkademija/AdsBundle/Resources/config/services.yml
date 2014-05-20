@@ -2,6 +2,8 @@ parameters:
 #    nfq_akademija_ads.example.class: NfqAkademija\AdsBundle\Example
 
 services:
+    google_ads.user:
+        class: Google\Api\Ads\AdWords\Lib\AdWordsUser
     hwi_oauth.user.provider.entity:
         class: HWI\Bundle\OAuthBundle\Security\Core\User\OAuthUserProvider
     ib_user.oauth_user_provider:

@@ -13,4 +13,6 @@
 /app/config/deploy_config
 /app/config/parameters.yml.save
 /src/NfqAkademija/AdsBundle/Entity/Ad.php~
-/src/NfqAkademija/AdsBundle/Entity/Campgain.php~
+/src/NfqAkademija/AdsBundle/Entity/Campaign.php~
+/src/NfqAkademija/AdsBundle/Entity/User.php~
+

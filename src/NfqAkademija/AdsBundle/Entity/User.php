@@ -74,6 +74,11 @@ class User extends OAuthUser implements EquatableInterface, \Serializable
      */
     protected $adWordsUserId;
     /**
+     * @ORM\OneToMany(targetEntity="NfqAkademija\AdsBundle\Entity\Campaign", mappedBy="userId")
+     */
+    protected $campaigns;
+    
+    /**
      * @param mixed $isActive
      */
     public function setIsActive($isActive)
@@ -90,6 +95,7 @@ class User extends OAuthUser implements EquatableInterface, \Serializable
     public function __construct()
     {
         $this->roles = new ArrayCollection();
+        $this->campaigns = new ArrayCollection();
         $this->isActive = true;
         $this->salt = md5(uniqid(null, true));
     }
@@ -300,5 +306,37 @@ class User extends OAuthUser implements EquatableInterface, \Serializable
     public function getAdWordsUserId()
     {
         return $this->adWordsUserId;
+    }
+
+    /**
+     * Add campaigns
+     *
+     * @param NfqAkademija\AdsBundle\Entity\Campaign $campaigns
+     * @return User
+     */
+    public function addCampaign(\NfqAkademija\AdsBundle\Entity\Campaign $campaigns)
+    {
+        $this->campaigns[] = $campaigns;
+        return $this;
+    }
+
+    /**
+     * Remove campaigns
+     *
+     * @param NfqAkademija\AdsBundle\Entity\Campaign $campaigns
+     */
+    public function removeCampaign(\NfqAkademija\AdsBundle\Entity\Campaign $campaigns)
+    {
+        $this->campaigns->removeElement($campaigns);
+    }
+
+    /**
+     * Get campaigns
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getCampaigns()
+    {
+        return $this->campaigns;
     }
 }

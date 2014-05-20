@@ -3,6 +3,7 @@
 namespace NfqAkademija\AdsBundle\Entity;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Mapping;
 
 /**
  * CampaignRepository
@@ -12,4 +13,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class CampaignRepository extends EntityRepository
 {
+	public function findAllByUser($id)
+	{
+		return $this->getEntityManager()
+		       ->createQuery('SELECT r FROM NfqAkademijaAdsBundle:Campaign r
+		       WHERE r.user_id = :id')
+		       ->setParameters(array('id' => $id))->getResult();
+		//return $this->findBy(array('user_id' => $id));
+    }
 }
